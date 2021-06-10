@@ -2,7 +2,7 @@
 
 #### _Integrantes_
 - Guilherme Alves Carvalho
-- João Batista de Souza Paula
+- João Batista de Sousa Paula
 
 #### _Requisitos do trabalho_
 1. Possuir ao menos 3 classes básicas do domínio (ex: Cliente, Aluno, Produtos, etc...)

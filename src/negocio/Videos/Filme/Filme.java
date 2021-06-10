@@ -1,5 +1,5 @@
-package Filme;
-import Estrutura_videos.Estrutura_videos;
+package Videos.Filme;
+import Videos.Estrutura_videos;
 
 public class Filme extends Estrutura_videos{
 

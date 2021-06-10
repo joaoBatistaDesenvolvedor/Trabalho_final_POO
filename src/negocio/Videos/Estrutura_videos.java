@@ -1,4 +1,4 @@
-package Estrutura_videos;
+package Videos;
 
 public class Estrutura_videos {
 	private String nome;

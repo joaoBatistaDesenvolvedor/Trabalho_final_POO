@@ -1,5 +1,6 @@
-#Trabalho Final de POO (Java)
-####_Integrantes_
+# Trabalho Final de POO (Java)
+
+#### _Integrantes_
 - Guilherme Alves Carvalho
 - João Batista de Souza Paula
 

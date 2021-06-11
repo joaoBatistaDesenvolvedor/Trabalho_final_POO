@@ -10,7 +10,7 @@ public class FilmeDAO extends CadastroGenerico<Filme> {
 			Filme f = lista.get(i);
 				if(f.getNome().equals(chave));
 		}
-		throw new Exception("filme com o nome " + chave + " não encontrado!");
+		throw new Exception("Filme com o nome " + chave + " não encontrado!");
 
 	}
 
@@ -22,7 +22,7 @@ public class FilmeDAO extends CadastroGenerico<Filme> {
 				return i;
 			}
 		}
-		throw new Exception("filme com " + t.getAno() + " não encontrado!");
+		throw new Exception("Filme com " + t.getAno() + " não encontrado!");
 
 	}
 

@@ -9,10 +9,9 @@ public class AnimeDAO extends CadastroGenerico<Anime> {
 		for (int i = 0; i < lista.size(); i++) {
 			Anime a = lista.get(i);
 			if (a.getNome().equals(chave))
-				;
+				return a;
 		}
 		throw new Exception("anime com o nome " + chave + " não encontrado!");
-
 	}
 
 	@Override

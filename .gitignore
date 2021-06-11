@@ -1,2 +1,7 @@
 .idea
 Trabalho_final.iml
+.classpath
+.project
+.settings
+bin/
+

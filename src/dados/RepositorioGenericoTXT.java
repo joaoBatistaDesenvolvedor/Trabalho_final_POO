@@ -34,7 +34,7 @@ abstract public class RepositorioGenericoTXT <T extends Gravavel> {
 		}
 	}
 
-	public ArrayList<T> recuperar() throws IOException {
+	public ArrayList<T> recuperar() throws Exception {
 		ArrayList<T> lista = new ArrayList<>();
 		FileInputStream fi = null;
 		try{

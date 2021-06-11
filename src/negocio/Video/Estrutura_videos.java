@@ -1,4 +1,4 @@
-package negocio.video;
+package negocio.Video;
 
 public class Estrutura_videos {
 	private String nome;

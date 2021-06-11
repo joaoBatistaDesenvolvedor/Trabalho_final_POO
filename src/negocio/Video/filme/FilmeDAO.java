@@ -1,9 +1,9 @@
-package negocio.video.filme;
+package negocio.Video.filme;
 
 import dados.CadastroGenerico;
-import negocio.video.Estrutura_videos;
+import negocio.Video.Estrutura_videos;
 
-public class FilmesDao extends CadastroGenerico<negocio.video.filme.Filme> {
+public class FilmeDAO extends CadastroGenerico<Filme> {
 
 	@Override
 	public Filme busca(String chave) throws Exception {

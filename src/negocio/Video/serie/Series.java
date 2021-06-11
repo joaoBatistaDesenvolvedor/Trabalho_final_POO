@@ -1,6 +1,6 @@
-package negocio.video.serie;
+package negocio.Video.serie;
 
-import negocio.video.Estrutura_videos;
+import negocio.Video.Estrutura_videos;
 
 public class Series extends Estrutura_videos {
 	private int numero_temporada, numero_total_ep;

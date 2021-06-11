@@ -4,4 +4,6 @@ Trabalho_final.iml
 .project
 .settings
 bin/
+out/
+*.iml
 

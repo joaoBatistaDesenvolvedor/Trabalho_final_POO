@@ -8,10 +8,7 @@ import negocio.Video.Estrutura_videos;
 public class Filme extends Estrutura_videos implements Gravavel {
 	static final String SEPARADOR = "#";
 
-	public Filme(String nome, double duracao, String genero, int ano, String sinopse) throws Exception {
-		super(nome, duracao, genero, ano, sinopse);
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	@Override
 	public String getRegistro() {

@@ -11,15 +11,6 @@ public class Estrutura_videos {
 		return nome;
 	}
 
-	public Estrutura_videos(String nome, double duracao, String genero, int ano, String sinopse) throws Exception {
-		setNome(nome);
-		setDuracao(duracao);
-		setGenero(genero);
-		setAno(ano);
-		setSinopse(sinopse);
-
-	}
-
 	public void setNome(String nome) throws Exception {
 		if (nome.equals(null)) {
 			throw new Exception("Nome invalido");

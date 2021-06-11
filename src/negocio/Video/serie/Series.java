@@ -1,14 +1,15 @@
 package negocio.Video.serie;
 
+import java.util.StringTokenizer;
+
+import dados.Gravavel;
 import negocio.Video.Estrutura_videos;
 
-public class Series extends Estrutura_videos {
+public class Series extends Estrutura_videos implements Gravavel {
 	private int numero_temporada, numero_total_ep;
+	static final String SEPARADOR = "#";
 
-	public Series(String nome, double duracao, String genero, int ano, String sinopse) throws Exception {
-		super(nome, duracao, genero, ano, sinopse);
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	public int getNumero_temporada() {
 		return numero_temporada;
@@ -32,4 +33,42 @@ public class Series extends Estrutura_videos {
 		this.numero_total_ep = numero_total_ep;
 	}
 
+	@Override
+	public String getRegistro() {
+		StringBuffer reg = new StringBuffer();
+		reg.append(this.getNome());
+		reg.append(SEPARADOR);
+		reg.append(this.getDuracao());
+		reg.append(SEPARADOR);
+		reg.append(this.getGenero());
+		reg.append(SEPARADOR);
+		reg.append(this.getAno());
+		reg.append(SEPARADOR);
+		reg.append(this.getSinopse());
+		reg.append(SEPARADOR);
+		reg.append(this.getNumero_temporada());
+		reg.append(SEPARADOR);
+		reg.append(this.getNumero_total_ep());
+		reg.append("\n");
+		return reg.toString();
+	}
+
+	@Override
+	public void setRegistro(String reg) throws Exception {
+		StringTokenizer st = new StringTokenizer(reg, SEPARADOR);
+		this.setNome(st.nextToken());
+		this.setDuracao(Double.parseDouble(st.nextToken()));
+		this.setGenero(st.nextToken());
+		this.setAno(Integer.parseInt(st.nextToken()));
+		this.setSinopse(st.nextToken());
+		this.setNumero_temporada(Integer.parseInt(st.nextToken()));
+		this.setNumero_total_ep(Integer.parseInt(st.nextToken()));
+
+	}
+
+	@Override
+	public String toString() {
+		return "Series [nome"+ this.getNome()+"duracao"+this.getDuracao()+"genero"+this.getGenero()+"ano"+this.getAno()+"sinopse"+this.getSinopse()+" numero_temporada=" + this.numero_temporada + ", numero_total_ep=" + this.numero_total_ep + "]";
+	}
+ 
 }

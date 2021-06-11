@@ -1,7 +1,6 @@
 package negocio.Video.filme;
 
 import dados.CadastroGenerico;
-import negocio.Video.Estrutura_videos;
 
 public class FilmeDAO extends CadastroGenerico<Filme> {
 

@@ -8,7 +8,8 @@ public class SeriesDAO extends CadastroGenerico<Series> {
 	public Series busca(String chave) throws Exception {
 		for (int i = 0; i < lista.size(); i++) {
 			Series s = lista.get(i);
-				if(s.getNome().equals(chave));
+			if (s.getNome().equals(chave))
+				;
 		}
 		throw new Exception("serie com o nome " + chave + " não encontrado!");
 	}
@@ -21,7 +22,7 @@ public class SeriesDAO extends CadastroGenerico<Series> {
 				return i;
 			}
 		}
-		throw new Exception("serie com " + t.getAno() + " não encontrado!");		
+		throw new Exception("serie com " + t.getAno() + " não encontrado!");
 	}
 
 }

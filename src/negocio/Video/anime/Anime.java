@@ -5,10 +5,9 @@ import java.util.StringTokenizer;
 import dados.Gravavel;
 import negocio.Video.serie.Series;
 
-public class Anime extends Series implements Gravavel{
+public class Anime extends Series implements Gravavel {
 	static final String SEPARADOR = "#";
 
-	
 	@Override
 	public String getRegistro() {
 		StringBuffer reg = new StringBuffer();
@@ -34,15 +33,13 @@ public class Anime extends Series implements Gravavel{
 		this.setGenero(st.nextToken());
 		this.setAno(Integer.parseInt(st.nextToken()));
 		this.setSinopse(st.nextToken());
-		
+
 	}
 
 	@Override
 	public String toString() {
-		return "anime nome"+this.getNome()+" genero"+this.getGenero()+"sinopse"+this.getSinopse() + " duracao"+this.getDuracao()+" ano"+this.getAno();
+		return "anime nome" + this.getNome() + " genero" + this.getGenero() + "sinopse" + this.getSinopse() + " duracao"
+				+ this.getDuracao() + " ano" + this.getAno();
 	}
 
-
-
-	}
-
+}

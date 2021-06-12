@@ -8,7 +8,8 @@ public class FilmeDAO extends CadastroGenerico<Filme> {
 	public Filme busca(String chave) throws Exception {
 		for (int i = 0; i < lista.size(); i++) {
 			Filme f = lista.get(i);
-				if(f.getNome().equals(chave));
+			if (f.getNome().equals(chave))
+				;
 		}
 		throw new Exception("Filme com o nome " + chave + " não encontrado!");
 

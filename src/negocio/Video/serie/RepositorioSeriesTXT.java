@@ -2,7 +2,7 @@ package negocio.Video.serie;
 
 import dados.RepositorioGenericoTXT;
 
-public class RepositorioSeriesTXT extends RepositorioGenericoTXT<Series>{
+public class RepositorioSeriesTXT extends RepositorioGenericoTXT<Series> {
 
 	@Override
 	public Series create() {

@@ -9,8 +9,6 @@ public class Series extends Estrutura_videos implements Gravavel {
 	private int numero_temporada, numero_total_ep;
 	static final String SEPARADOR = "#";
 
-	
-
 	public int getNumero_temporada() {
 		return numero_temporada;
 	}
@@ -68,7 +66,9 @@ public class Series extends Estrutura_videos implements Gravavel {
 
 	@Override
 	public String toString() {
-		return "Series [nome"+ this.getNome()+"duracao"+this.getDuracao()+"genero"+this.getGenero()+"ano"+this.getAno()+"sinopse"+this.getSinopse()+" numero_temporada=" + this.numero_temporada + ", numero_total_ep=" + this.numero_total_ep + "]";
+		return "Series [nome" + this.getNome() + "duracao" + this.getDuracao() + "genero" + this.getGenero() + "ano"
+				+ this.getAno() + "sinopse" + this.getSinopse() + " numero_temporada=" + this.numero_temporada
+				+ ", numero_total_ep=" + this.numero_total_ep + "]";
 	}
- 
+
 }

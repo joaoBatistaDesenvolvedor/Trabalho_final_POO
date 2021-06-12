@@ -8,8 +8,6 @@ import negocio.Video.Estrutura_videos;
 public class Filme extends Estrutura_videos implements Gravavel {
 	static final String SEPARADOR = "#";
 
-	
-
 	@Override
 	public String getRegistro() {
 		StringBuffer reg = new StringBuffer();
@@ -35,14 +33,13 @@ public class Filme extends Estrutura_videos implements Gravavel {
 		this.setGenero(st.nextToken());
 		this.setAno(Integer.parseInt(st.nextToken()));
 		this.setSinopse(st.nextToken());
-		
+
 	}
 
 	@Override
 	public String toString() {
-		return "Filmes nome"+this.getNome()+" genero"+this.getGenero()+"sinopse"+this.getSinopse() + " duracao"+this.getDuracao()+" ano"+this.getAno();
+		return "Filmes nome" + this.getNome() + " genero" + this.getGenero() + "sinopse" + this.getSinopse()
+				+ " duracao" + this.getDuracao() + " ano" + this.getAno();
 	}
 
-
-	
 }

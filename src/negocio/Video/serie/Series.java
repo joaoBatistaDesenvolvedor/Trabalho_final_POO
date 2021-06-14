@@ -15,7 +15,7 @@ public class Series extends Estrutura_videos implements Gravavel {
 
 	public void setNumero_temporada(int numero_temporada) throws Exception {
 		if (numero_temporada <= 0) {
-			throw new Exception("numero de temporadas negativo ou zero");
+			throw new Exception("Número temporadas não pode ser nulo/negativo");
 		}
 		this.numero_temporada = numero_temporada;
 	}
@@ -26,7 +26,7 @@ public class Series extends Estrutura_videos implements Gravavel {
 
 	public void setNumero_total_ep(int numero_total_ep) throws Exception {
 		if (numero_total_ep <= 0) {
-			throw new Exception("numero total de ep negativo ou zero");
+			throw new Exception("Número total de episódios não pode ser nulo/negativo");
 		}
 		this.numero_total_ep = numero_total_ep;
 	}
@@ -66,9 +66,9 @@ public class Series extends Estrutura_videos implements Gravavel {
 
 	@Override
 	public String toString() {
-		return "Series [nome" + this.getNome() + "duracao" + this.getDuracao() + "genero" + this.getGenero() + "ano"
-				+ this.getAno() + "sinopse" + this.getSinopse() + " numero_temporada=" + this.numero_temporada
-				+ ", numero_total_ep=" + this.numero_total_ep + "]";
+		return "Serie [nome: " + this.getNome() + ", duracao: " + this.getDuracao() + ", genero: " + this.getGenero() + ", ano: "
+				+ this.getAno() + ", sinopse: " + this.getSinopse() + ", numero_temporada: " + this.numero_temporada
+				+ ", numero_total_ep: " + this.numero_total_ep + "]";
 	}
 
 }

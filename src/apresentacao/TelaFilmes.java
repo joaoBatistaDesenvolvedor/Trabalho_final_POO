@@ -63,7 +63,7 @@ public class TelaFilmes {
 		lblNomeDaSerie.setBounds(12, 133, 109, 15);
 		frame.getContentPane().add(lblNomeDaSerie);
 		
-		JLabel lblDuracao = new JLabel("Duracao");
+		JLabel lblDuracao = new JLabel("Duração");
 		lblDuracao.setBounds(250, 133, 59, 15);
 		frame.getContentPane().add(lblDuracao);
 		
@@ -72,7 +72,7 @@ public class TelaFilmes {
 		text_duracao_filme.setBounds(314, 131, 114, 19);
 		frame.getContentPane().add(text_duracao_filme);
 		
-		JLabel lblGenero = new JLabel("Genero");
+		JLabel lblGenero = new JLabel("Gênero");
 		lblGenero.setBounds(432, 133, 52, 15);
 		frame.getContentPane().add(lblGenero);
 		

@@ -18,7 +18,7 @@ public class AnimeDAO extends CadastroGenerico<Anime> {
 			if (a.getNome().equals(chave))
 				return a;
 		}
-		throw new Exception("anime com o nome " + chave + " não encontrado!");
+		throw new Exception("Anime com o nome '" + chave + "' não encontrado!");
 	}
 
 	@Override
@@ -29,6 +29,6 @@ public class AnimeDAO extends CadastroGenerico<Anime> {
 				return i;
 			}
 		}
-		throw new Exception("anime com " + t.getAno() + " não encontrado!");
+		throw new Exception("Anime com o nome '" + t.getNome() + "' não encontrado!");
 	}
 }

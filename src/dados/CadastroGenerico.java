@@ -40,13 +40,13 @@ public abstract class CadastroGenerico<T extends Gravavel> {
       this.lista = repo.recuperar();
       return this.lista;
     } else
-      throw new Exception("Repositorio não configurado!");
+      throw new Exception("Repositório não configurado!");
   }
 
   public void salvar() throws Exception {
     if (repo != null)
       repo.salvar(this.lista);
     else
-      throw new Exception("Repositorio não configurado!");
+      throw new Exception("Repositório não configurado!");
   }
 }

@@ -69,7 +69,7 @@ public class TelaAnime {
 		frame.getContentPane().add(text_nome_anime);
 		text_nome_anime.setColumns(10);
 		
-		JLabel lblDuracao = new JLabel("Duracao");
+		JLabel lblDuracao = new JLabel("Duração");
 		lblDuracao.setBounds(239, 125, 59, 15);
 		frame.getContentPane().add(lblDuracao);
 		
@@ -78,7 +78,7 @@ public class TelaAnime {
 		frame.getContentPane().add(text_duracao_anime);
 		text_duracao_anime.setColumns(10);
 		
-		JLabel lblGenero = new JLabel("Genero");
+		JLabel lblGenero = new JLabel("Gênero");
 		lblGenero.setBounds(422, 125, 52, 15);
 		frame.getContentPane().add(lblGenero);
 		
@@ -104,7 +104,7 @@ public class TelaAnime {
 		text_anime_sinopse.setBounds(492, 154, 140, 87);
 		frame.getContentPane().add(text_anime_sinopse);
 		
-		JLabel lbl_n_t_ep = new JLabel("numero total de Ep");
+		JLabel lbl_n_t_ep = new JLabel("Número Total de Episódios");
 		lbl_n_t_ep.setBounds(6, 176, 135, 15);
 		frame.getContentPane().add(lbl_n_t_ep);
 		
@@ -113,7 +113,7 @@ public class TelaAnime {
 		frame.getContentPane().add(text_anime_n_Ep);
 		text_anime_n_Ep.setColumns(10);
 		
-		JLabel lbl_n_t_ep_1 = new JLabel("numero total de temporadas");
+		JLabel lbl_n_t_ep_1 = new JLabel("Número Total de Temporadas");
 		lbl_n_t_ep_1.setBounds(6, 224, 218, 15);
 		frame.getContentPane().add(lbl_n_t_ep_1);
 		

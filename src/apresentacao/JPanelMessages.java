@@ -3,7 +3,7 @@ package apresentacao;
 import javax.swing.*;
 import java.awt.Component;
 
-public class JPanelMesssages {
+public class JPanelMessages {
   protected static void erro(Component comp , String msg){
     JOptionPane.showMessageDialog(comp, msg,"ERRO", JOptionPane.ERROR_MESSAGE);
   }

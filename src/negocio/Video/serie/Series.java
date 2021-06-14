@@ -3,9 +3,9 @@ package negocio.Video.serie;
 import java.util.StringTokenizer;
 
 import dados.Gravavel;
-import negocio.Video.Estrutura_videos;
+import negocio.Video.Video;
 
-public class Series extends Estrutura_videos implements Gravavel {
+public class Series extends Video implements Gravavel {
 	private int numero_temporada, numero_total_ep;
 	static final String SEPARADOR = "#";
 

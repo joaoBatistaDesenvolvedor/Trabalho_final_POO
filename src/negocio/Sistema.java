@@ -52,7 +52,7 @@ public class Sistema implements IFachadaSistema {
 
   @Override
   public void atualizarAnime(Anime a) throws Exception {
-    daoAnime.atualizar(a);
+    daoAnime.atualizar(a.getNome(), a);
     daoAnime.salvar();
   }
 
@@ -81,7 +81,7 @@ public class Sistema implements IFachadaSistema {
 
   @Override
   public void atualizarFilme(Filme f) throws Exception {
-    daoFilme.atualizar(f);
+    daoFilme.atualizar(f.getNome(), f);
     daoFilme.salvar();
   }
 
@@ -110,7 +110,7 @@ public class Sistema implements IFachadaSistema {
 
   @Override
   public void atualizarSeries(Series s) throws Exception {
-    daoSerie.atualizar(s);
+    daoSerie.atualizar(s.getNome(), s);
     daoSerie.salvar();
   }
 }

@@ -3,9 +3,9 @@ package negocio.Video.filme;
 import java.util.StringTokenizer;
 
 import dados.Gravavel;
-import negocio.Video.Estrutura_videos;
+import negocio.Video.Video;
 
-public class Filme extends Estrutura_videos implements Gravavel {
+public class Filme extends Video implements Gravavel {
 	static final String SEPARADOR = "#";
 
 	@Override

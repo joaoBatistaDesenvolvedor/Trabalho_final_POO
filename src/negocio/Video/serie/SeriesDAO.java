@@ -22,14 +22,14 @@ public class SeriesDAO extends CadastroGenerico<Series> {
 	}
 
 	@Override
-	public int buscaPosicao(Series t) throws Exception {
+	public int buscaPosicao(String nome) throws Exception {
 		for (int i = 0; i < this.lista.size(); i++) {
 			Series s = lista.get(i);
-			if (s == t) {
+			if (s.getNome().equals(nome)) {
 				return i;
 			}
 		}
-		throw new Exception("Serie com o nome '" + t.getNome() + "' não encontrado!");
+		throw new Exception("Serie com o nome '" + nome + "' não encontrado!");
 	}
 
 }

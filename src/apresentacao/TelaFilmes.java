@@ -61,7 +61,7 @@ public class TelaFilmes extends JFrame {
 			IF = Sistema.getFachada();
 
 		} catch (Exception e) {
-			JPanelMesssages.erro(this, e.getMessage());
+			JPanelMessages.erro(this, e.getMessage());
 
 		}
 		frame.setBounds(100, 100, 640, 452);
@@ -133,8 +133,7 @@ public class TelaFilmes extends JFrame {
 					filme.setAno(Integer.parseInt(text_ano_lancamento_filme.getText()));
 					filme.setSinopse(text_filme_sinopse.getText());
 					IF.cadastrarFilme(filme);
-					JOptionPane.showMessageDialog(btn_cadastrar_Filme,
-							"Filme " + filme.getNome() + " Cadastrado com sucesso");
+					JPanelMessages.sucesso(btn_cadastrar_Filme, "Filme " + filme.getNome() + " Cadastrado com sucesso");
 					text_nome_filme.setText("");
 					text_duracao_filme.setText("");
 					text_genero_filme.setText("");
@@ -142,11 +141,9 @@ public class TelaFilmes extends JFrame {
 					text_filme_sinopse.setText("");
 
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(btn_cadastrar_Filme, "nao possivel cadastrar filme", "Erro",
-							JOptionPane.INFORMATION_MESSAGE);
+					JPanelMessages.erro(btn_cadastrar_Filme, "Não é possível cadastrar filme");
 					e.printStackTrace();
 				}
-
 			}
 		});
 		btn_cadastrar_Filme.setBounds(12, 348, 197, 25);
@@ -157,11 +154,10 @@ public class TelaFilmes extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					filme = IF.buscarFilme(text_nome_filme.getText());
-					JOptionPane.showMessageDialog(btn_cadastrar_Filme,
-							"nome " + filme.getNome() + "duracao " + filme.getDuracao() + "\n" + "genero "
-									+ filme.getGenero() + "\n" + "ano lancamento" + filme.getAno());
+					JPanelMessages.sucesso(btn_cadastrar_Filme, "Nome: " + filme.getNome() + "\nDuração: " + filme.getDuracao() + "\nGênero: "
+									+ filme.getGenero() + "\nAno de Lançamento: " + filme.getAno());
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(btnBuscarFilme, "o Filme  "+ text_nome_filme.getText()+" nao existe na base de dados");
+					JPanelMessages.erro(btnBuscarFilme, "Filme '"+ text_nome_filme.getText()+"' nao existe na base de dados");
 				}
 			}
 		});
@@ -175,8 +171,7 @@ public class TelaFilmes extends JFrame {
 						&& text_filme_sinopse.getText().length() <= 0
 						&& text_ano_lancamento_filme.getText().length() <= 0
 						&& text_genero_filme.getText().length() <= 0) {
-					JOptionPane.showMessageDialog(btn_cadastrar_Filme, "Todos os campos estao vazio",
-							"Erro ao cancelar", JOptionPane.INFORMATION_MESSAGE);
+					JPanelMessages.sucesso(btn_cadastrar_Filme, "Todos os campos estão vazios");
 				} else {
 					text_nome_filme.setText("");
 					text_duracao_filme.setText("");
@@ -201,7 +196,18 @@ public class TelaFilmes extends JFrame {
 		JButton btnAtualizar_Filme = new JButton("ATUALIZAR");
 		btnAtualizar_Filme.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				try {
+					filme.setNome(text_nome_filme.getText());
+					filme.setDuracao(Double.parseDouble(text_duracao_filme.getText()));
+					filme.setAno(Integer.parseInt(text_ano_lancamento_filme.getText()));
+					filme.setGenero(text_genero_filme.getText());
+					filme.setSinopse(text_filme_sinopse.getText());
+					IF.atualizarFilme(filme);
+					JPanelMessages.sucesso(btnAtualizar_Filme, "Filme '" + filme.getNome() + "' atualizado com sucesso");
+				} catch (Exception e) {
+					JPanelMessages.erro(btnAtualizar_Filme, "Não é possível atualizar o filme");
+					e.printStackTrace();
+				}
 			}
 		});
 		btnAtualizar_Filme.setBounds(252, 385, 117, 25);
@@ -212,14 +218,10 @@ public class TelaFilmes extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					IF.excluirFilme(text_nome_filme.getText());
-					JOptionPane.showMessageDialog(btn_excluir_filme,
-							"filme " + text_nome_filme.getText() + "excluido com sucesso");
-
+					JPanelMessages.sucesso(btn_excluir_filme, "Filme '" + text_nome_filme.getText() + "' excluido com sucesso");
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(btn_excluir_filme,
-							"filme " + text_nome_filme.getText() + "nao possivel escluir");
+					JPanelMessages.erro(btn_excluir_filme, "Filme '" + text_nome_filme.getText() + "' não possível excluir");
 				}
-
 			}
 		});
 		btn_excluir_filme.setBounds(45, 385, 117, 25);

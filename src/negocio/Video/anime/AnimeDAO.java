@@ -22,13 +22,13 @@ public class AnimeDAO extends CadastroGenerico<Anime> {
 	}
 
 	@Override
-	public int buscaPosicao(Anime t) throws Exception {
+	public int buscaPosicao(String nome) throws Exception {
 		for (int i = 0; i < this.lista.size(); i++) {
 			Anime a = lista.get(i);
-			if (a == t) {
+			if (a.getNome().equals(nome)) {
 				return i;
 			}
 		}
-		throw new Exception("Anime com o nome '" + t.getNome() + "' não encontrado!");
+		throw new Exception("Anime com o nome '" + nome + "' não encontrado!");
 	}
 }

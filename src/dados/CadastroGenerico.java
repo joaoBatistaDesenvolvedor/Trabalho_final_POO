@@ -18,8 +18,8 @@ public abstract class CadastroGenerico<T extends Gravavel> {
     this.lista.remove(busca(chave));
   }
 
-  public void atualizar(T t) throws Exception {
-    this.lista.set(buscaPosicao(t), t);
+  public void atualizar(String key, T t) throws Exception {
+    this.lista.set(buscaPosicao(key), t);
   }
 
   public ArrayList<T> getLista() {
@@ -28,7 +28,7 @@ public abstract class CadastroGenerico<T extends Gravavel> {
 
   abstract public T busca(String chave) throws Exception;
 
-  abstract public int buscaPosicao(T t) throws Exception;
+  abstract public int buscaPosicao(String nome) throws Exception;
 
 
   public void setRepo(RepositorioGenericoTXT repo) {

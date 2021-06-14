@@ -6,7 +6,6 @@ import javax.swing.*;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.JobAttributes;
 
 import negocio.IFachadaSistema;
 import negocio.Sistema;
@@ -57,7 +56,7 @@ public class TelaAnime extends JFrame {
 		try {
 			IF = Sistema.getFachada();
 		} catch (Exception e) {
-			JPanelMesssages.erro(this, e.getMessage());
+			JPanelMessages.erro(this, e.getMessage());
 		}
 		frame = new JFrame();
 		frame.getContentPane().setForeground(Color.WHITE);
@@ -151,10 +150,7 @@ public class TelaAnime extends JFrame {
 					anime.setNumero_total_ep(Integer.parseInt(text_anime_n_Ep.getText()));
 					anime.setNumero_temporada(Integer.parseInt(text_n_t_temporada.getText()));
 					IF.cadastrarAnime(anime);
-
-
-					JOptionPane.showMessageDialog(btnCadastrarAnime, "Nome: " + anime.getNome(),
-							"Anime cadastrado com sucesso", JOptionPane.INFORMATION_MESSAGE);
+					JPanelMessages.sucesso(btnCadastrarAnime, "Anime '" + anime.getNome() + "' cadastrado com sucesso");
 					text_nome_anime.setText("");
 					text_duracao_anime.setText("");
 					text_anime_ano_lacamento.setText("");
@@ -164,7 +160,7 @@ public class TelaAnime extends JFrame {
 					text_n_t_temporada.setText("");
 
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(btnCadastrarAnime, this, "Nao e possivel cadastrar o anime", 0);
+					JPanelMessages.erro(btnCadastrarAnime, "Erro: " + e.getMessage());
 					e.printStackTrace();
 				}
 			}
@@ -177,14 +173,12 @@ public class TelaAnime extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					anime = IF.buscarAnime(text_nome_anime.getText());
-					JOptionPane.showMessageDialog(btnBuscarAnime,
-							"nome" + anime.getNome() + "\n" + "genero " + anime.getGenero() + "\n" + "numero ep "
-									+ anime.getNumero_total_ep() + "\n" + "numero temp " + anime.getNumero_temporada()
-									+ "\n" + "duracao " + anime.getDuracao() + "\n" + "sinopse " + anime.getSinopse()
-									+ "\n" + "ano " + anime.getAno());
+					JPanelMessages.sucesso(btnBuscarAnime, "Nome: " + anime.getNome() + "\nGênero: " + anime.getGenero() + "\nNúmero de episódios: "
+									+ anime.getNumero_total_ep() + "\nNúmero de temporadas: " + anime.getNumero_temporada()
+									+ "\nDuração: " + anime.getDuracao() + "\nSinopse: " + anime.getSinopse()
+									+ "\nAno: " + anime.getAno());
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(btnBuscarAnime,
-							"o anime " + text_nome_anime.getText() + " nao existe na base de dados");
+					JPanelMessages.erro(btnBuscarAnime, "Anime com nome '" + text_nome_anime.getText() + "' não existe na base de dados");
 					e.printStackTrace();
 				}
 			}
@@ -199,9 +193,7 @@ public class TelaAnime extends JFrame {
 						&& text_anime_ano_lacamento.getText().length() <= 0 && text_anime_genero.getText().length() <= 0
 						&& text_anime_sinopse.getText().length() <= 0 && text_n_t_temporada.getText().length() <= 0
 						&& text_anime_n_Ep.getText().length() <= 0) {
-					JOptionPane.showMessageDialog(btnCadastrarAnime, "os campos ja estao vazios", "Cancelar Erro",
-							JOptionPane.INFORMATION_MESSAGE);
-
+					JPanelMessages.sucesso(btnCadastrarAnime, "Os campos já estão vazios");
 				} else {
 					text_nome_anime.setText("");
 					text_duracao_anime.setText("");
@@ -221,11 +213,9 @@ public class TelaAnime extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					IF.excluirAnime(text_nome_anime.getText());
-					JOptionPane.showMessageDialog(btnExcluir,
-							"anime " + text_nome_anime.getText() + "excluido com sucesso");
+					JPanelMessages.sucesso(btnExcluir, "Anime '" + text_nome_anime.getText() + "' excluido com sucesso");
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(btnExcluir,
-							"anime " + text_nome_anime.getText() + "nao possivel escluir");
+					JPanelMessages.erro(btnExcluir, "Anime '" + text_nome_anime.getText() + "' não excluido(não existe)");
 					e.printStackTrace();
 				}
 			}
@@ -236,7 +226,6 @@ public class TelaAnime extends JFrame {
 		JButton btnAtualizar = new JButton("ATUALIZAR");
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
 				try {
 					anime.setNome(text_nome_anime.getText());
 					anime.setDuracao(Double.parseDouble(text_duracao_anime.getText()));
@@ -246,15 +235,11 @@ public class TelaAnime extends JFrame {
 					anime.setNumero_total_ep(Integer.parseInt(text_anime_n_Ep.getText()));
 					anime.setNumero_temporada(Integer.parseInt(text_n_t_temporada.getText()));
 					IF.atualizarAnime(anime);
-
-					JOptionPane.showMessageDialog(btnAtualizar, "Nome: " + anime.getNome(),
-							"Anime atualizado com sucesso", JOptionPane.INFORMATION_MESSAGE);
-
+					JPanelMessages.sucesso(btnAtualizar, "Anime '" + anime.getNome() + "' atualizado com sucesso");
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(btnAtualizar, this, "Nao e possivel atualizar o anime", 0);
+					JPanelMessages.erro(btnAtualizar, "Não é possível atualizar o anime");
 					e.printStackTrace();
 				}
-
 			}
 		});
 		btnAtualizar.setBounds(278, 322, 117, 25);
@@ -269,5 +254,4 @@ public class TelaAnime extends JFrame {
 		btnSair.setBounds(453, 322, 117, 25);
 		frame.getContentPane().add(btnSair);
 	}
-
 }

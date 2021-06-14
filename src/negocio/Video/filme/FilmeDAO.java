@@ -16,21 +16,21 @@ public class FilmeDAO extends CadastroGenerico<Filme> {
 		for (int i = 0; i < lista.size(); i++) {
 			Filme f = lista.get(i);
 			if (f.getNome().equals(chave))
-				;
+				return f;
 		}
 		throw new Exception("Filme com o nome '" + chave + "' não encontrado!");
 
 	}
 
 	@Override
-	public int buscaPosicao(Filme t) throws Exception {
+	public int buscaPosicao(String nome) throws Exception {
 		for (int i = 0; i < this.lista.size(); i++) {
 			Filme f = lista.get(i);
-			if (f == t) {
+			if (f.getNome().equals(nome)) {
 				return i;
 			}
 		}
-		throw new Exception("Filme com o nome '" + t.getNome() + "' não encontrado!");
+		throw new Exception("Filme com o nome '" + nome + "' não encontrado!");
 	}
 
 }

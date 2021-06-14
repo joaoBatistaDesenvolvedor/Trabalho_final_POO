@@ -1,6 +1,8 @@
 package negocio.Video;
 
-public class Estrutura_videos {
+import java.time.Year;
+
+public class Video {
 	private String nome;
 	private double duracao;
 	private String genero;
@@ -12,7 +14,7 @@ public class Estrutura_videos {
 	}
 
 	public void setNome(String nome) throws Exception {
-		if (nome.equals(null)) {
+		if (nome == null || nome.isEmpty()) {
 			throw new Exception("Nome inválido");
 		}
 		this.nome = nome;
@@ -47,7 +49,7 @@ public class Estrutura_videos {
 	}
 
 	public void setAno(int ano) throws Exception {
-		if (ano <= 0) {
+		if (ano <= 0 || ano > Year.now().getValue()) {
 			throw new Exception("Número do ano não pode ser nulo/negativo");
 		}
 		this.ano = ano;

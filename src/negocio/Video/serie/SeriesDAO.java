@@ -1,8 +1,15 @@
 package negocio.Video.serie;
 
 import dados.CadastroGenerico;
+import dados.RepositorioGenericoTXT;
 
 public class SeriesDAO extends CadastroGenerico<Series> {
+
+	public SeriesDAO() {
+		RepositorioGenericoTXT<Series> r = new RepositorioSeriesTXT();
+		r.setNomeArquivo("Series.txt");
+		this.setRepo(r);
+	}
 
 	@Override
 	public Series busca(String chave) throws Exception {

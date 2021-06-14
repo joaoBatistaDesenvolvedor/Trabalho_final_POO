@@ -1,8 +1,15 @@
 package negocio.Video.anime;
 
 import dados.CadastroGenerico;
+import dados.RepositorioGenericoTXT;
 
 public class AnimeDAO extends CadastroGenerico<Anime> {
+
+	public AnimeDAO() {
+		RepositorioGenericoTXT<Anime> r = new RepositorioAnimeTXT();
+		r.setNomeArquivo("Animes.txt");
+		this.setRepo(r);
+	}
 
 	@Override
 	public Anime busca(String chave) throws Exception {

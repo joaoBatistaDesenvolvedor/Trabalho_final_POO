@@ -1,8 +1,15 @@
 package negocio.Video.filme;
 
 import dados.CadastroGenerico;
+import dados.RepositorioGenericoTXT;
 
 public class FilmeDAO extends CadastroGenerico<Filme> {
+
+	public FilmeDAO() {
+		RepositorioGenericoTXT<Filme> r = new RepositorioFilmeTXT();
+		r.setNomeArquivo("Filmes.txt");
+		this.setRepo(r);
+	}
 
 	@Override
 	public Filme busca(String chave) throws Exception {

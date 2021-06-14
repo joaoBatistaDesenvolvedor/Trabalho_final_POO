@@ -4,12 +4,22 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.JobAttributes;
+
 import javax.swing.JTextField;
+
+import negocio.IFachadaSistema;
+import negocio.Video.anime.Anime;
+
 import java.awt.FlowLayout;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaAnime {
 
@@ -20,6 +30,8 @@ public class TelaAnime {
 	private JTextField text_anime_ano_lacamento;
 	private JTextField text_anime_n_Ep;
 	private JTextField text_n_t_temporada;
+	IFachadaSistema IF;
+	Anime anime;
 
 	/**
 	 * Launch the application.
@@ -123,6 +135,37 @@ public class TelaAnime {
 		frame.getContentPane().add(text_n_t_temporada);
 		
 		JButton btnCadastrarAnime = new JButton("CADASTRAR ANIME");
+		btnCadastrarAnime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			Anime novo_anime= new Anime();
+			try {
+				novo_anime.setNome(text_nome_anime.getText());
+				novo_anime.setDuracao(Double.parseDouble(text_duracao_anime.getText()));
+				novo_anime.setAno(Integer.parseInt(text_anime_ano_lacamento.getText()));
+				novo_anime.setGenero(text_anime_genero.getText());
+				novo_anime.setSinopse(text_anime_sinopse.getText());
+				novo_anime.setNumero_total_ep(Integer.parseInt(text_anime_n_Ep.getText()));
+				novo_anime.setNumero_temporada(Integer.parseInt(text_n_t_temporada.getText()));
+				IF.cadastrarAnime(novo_anime);
+				
+				//Obs criar a funçoes auxiliares sucesso erro aviso
+				
+				JOptionPane.showMessageDialog(btnCadastrarAnime, this, "Anime Cadastrado com sucesso",JOptionPane.INFORMATION_MESSAGE);
+				text_nome_anime.setText("");
+				text_duracao_anime.setText("");
+				text_anime_ano_lacamento.setText("");
+				text_anime_genero.setText("");
+				text_anime_sinopse.setText("");
+				text_anime_n_Ep.setText("");
+				text_n_t_temporada.setText("");
+				
+				
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(btnCadastrarAnime, this, "nao possivel cadastrar o anime", 0);
+				e.printStackTrace();
+			}
+			}
+		});
 		btnCadastrarAnime.setBounds(27, 285, 197, 25);
 		frame.getContentPane().add(btnCadastrarAnime);
 		
@@ -146,4 +189,6 @@ public class TelaAnime {
 		btnSair.setBounds(453, 322, 117, 25);
 		frame.getContentPane().add(btnSair);
 	}
+	
 }
+

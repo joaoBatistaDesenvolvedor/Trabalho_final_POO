@@ -13,7 +13,7 @@ public class Estrutura_videos {
 
 	public void setNome(String nome) throws Exception {
 		if (nome.equals(null)) {
-			throw new Exception("Nome invalido");
+			throw new Exception("Nome inválido");
 		}
 		this.nome = nome;
 
@@ -24,8 +24,8 @@ public class Estrutura_videos {
 	}
 
 	public void setDuracao(double duracao) throws Exception {
-		if (duracao < 0 || duracao == 0) {
-			throw new Exception("duracao invalida INFORME UMA DURACAO MAIOR 0");
+		if (duracao <= 0) {
+			throw new Exception("Número da duração não pode ser nulo/negativo");
 		}
 		this.duracao = duracao;
 	}
@@ -36,8 +36,8 @@ public class Estrutura_videos {
 	}
 
 	public void setGenero(String genero) throws Exception {
-		if (genero.equals(null)) {
-			throw new Exception("genero nao informado");
+		if (genero == null || genero.isEmpty()) {
+			throw new Exception("Genero não pode ser nulo/vazio");
 		}
 		this.genero = genero;
 	}
@@ -47,8 +47,8 @@ public class Estrutura_videos {
 	}
 
 	public void setAno(int ano) throws Exception {
-		if (ano < 0 || ano == 0) {
-			throw new Exception("ano ivalido informe um ano maior que zero");
+		if (ano <= 0) {
+			throw new Exception("Número do ano não pode ser nulo/negativo");
 		}
 		this.ano = ano;
 	}
@@ -58,10 +58,9 @@ public class Estrutura_videos {
 	}
 
 	public void setSinopse(String sinopse) throws Exception {
-		if (sinopse.equals(null)) {
-			throw new Exception("sinopse  nao informada");
+		if (sinopse == null || sinopse.isEmpty()) {
+			throw new Exception("Sinopse não pode ser nula/vazia");
 		}
 		this.sinopse = sinopse;
 	}
-
 }

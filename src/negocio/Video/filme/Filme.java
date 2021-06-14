@@ -38,8 +38,8 @@ public class Filme extends Estrutura_videos implements Gravavel {
 
 	@Override
 	public String toString() {
-		return "Filmes nome" + this.getNome() + " genero" + this.getGenero() + "sinopse" + this.getSinopse()
-				+ " duracao" + this.getDuracao() + " ano" + this.getAno();
+		return "Filme [nome: " + this.getNome() + ", genero: " + this.getGenero() + ", sinopse: " + this.getSinopse()
+				+ ", duracao: " + this.getDuracao() + ", ano: " + this.getAno() + "]";
 	}
 
 }

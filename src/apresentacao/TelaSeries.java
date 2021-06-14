@@ -62,11 +62,11 @@ public class TelaSeries {
 		text_nome_serie.setBounds(126, 165, 114, 19);
 		frame.getContentPane().add(text_nome_serie);
 		
-		JLabel lblNomeDaSerie = new JLabel("Nome da Serie");
+		JLabel lblNomeDaSerie = new JLabel("Nome da Série");
 		lblNomeDaSerie.setBounds(12, 167, 109, 15);
 		frame.getContentPane().add(lblNomeDaSerie);
 		
-		JLabel lblDuracao = new JLabel("Duracao");
+		JLabel lblDuracao = new JLabel("Duração");
 		lblDuracao.setBounds(252, 167, 59, 15);
 		frame.getContentPane().add(lblDuracao);
 		
@@ -75,7 +75,7 @@ public class TelaSeries {
 		text_duracao_serie.setBounds(316, 165, 114, 19);
 		frame.getContentPane().add(text_duracao_serie);
 		
-		JLabel lblGenero = new JLabel("Genero");
+		JLabel lblGenero = new JLabel("Gênero");
 		lblGenero.setBounds(452, 167, 52, 15);
 		frame.getContentPane().add(lblGenero);
 		
@@ -101,7 +101,7 @@ public class TelaSeries {
 		text_serie_sinopse.setBounds(358, 190, 140, 87);
 		frame.getContentPane().add(text_serie_sinopse);
 		
-		JLabel lbl_n_t_ep = new JLabel("total de Ep");
+		JLabel lbl_n_t_ep = new JLabel("Total de Episódios");
 		lbl_n_t_ep.setBounds(522, 213, 135, 15);
 		frame.getContentPane().add(lbl_n_t_ep);
 		
@@ -110,7 +110,7 @@ public class TelaSeries {
 		text_numero_total_ep_serie.setBounds(604, 209, 114, 19);
 		frame.getContentPane().add(text_numero_total_ep_serie);
 		
-		JLabel lbl_n_t_ep_1 = new JLabel("numero total de temporadas");
+		JLabel lbl_n_t_ep_1 = new JLabel("Número Total de Temporadas");
 		lbl_n_t_ep_1.setBounds(26, 302, 218, 15);
 		frame.getContentPane().add(lbl_n_t_ep_1);
 		

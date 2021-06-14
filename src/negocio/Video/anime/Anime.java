@@ -38,8 +38,8 @@ public class Anime extends Series implements Gravavel {
 
 	@Override
 	public String toString() {
-		return "anime nome" + this.getNome() + " genero" + this.getGenero() + "sinopse" + this.getSinopse() + " duracao"
-				+ this.getDuracao() + " ano" + this.getAno();
+		return "Anime [nome: " + this.getNome() + ", genero: " + this.getGenero() + ", sinopse: " + this.getSinopse() + ", duracao: "
+				+ this.getDuracao() + ", ano: " + this.getAno() + "]";
 	}
 
 }

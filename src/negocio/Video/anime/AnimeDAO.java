@@ -7,7 +7,7 @@ public class AnimeDAO extends CadastroGenerico<Anime> {
 
 	public AnimeDAO() {
 		RepositorioGenericoTXT<Anime> r = new RepositorioAnimeTXT();
-		r.setNomeArquivo("Animes.txt");
+		r.setNomeArquivo("./db/Animes.txt");
 		this.setRepo(r);
 	}
 

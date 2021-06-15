@@ -173,10 +173,25 @@ public class TelaAnime extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					anime = IF.buscarAnime(text_nome_anime.getText());
-					JPanelMessages.sucesso(btnBuscarAnime, "Nome: " + anime.getNome() + "\nGênero: " + anime.getGenero() + "\nNúmero de episódios: "
-									+ anime.getNumero_total_ep() + "\nNúmero de temporadas: " + anime.getNumero_temporada()
-									+ "\nDuração: " + anime.getDuracao() + "\nSinopse: " + anime.getSinopse()
-									+ "\nAno: " + anime.getAno());
+					String
+									nome = anime.getNome(),
+									sinopse = anime.getSinopse(),
+									genero = anime.getGenero(),
+									nTotEp = String.valueOf(anime.getNumero_total_ep()),
+									nTotTemp = String.valueOf(anime.getNumero_temporada()),
+									ano = String.valueOf(anime.getAno()),
+									duracao = String.valueOf(anime.getDuracao());
+					text_nome_anime.setText(nome);
+					text_anime_sinopse.setText(sinopse);
+					text_anime_genero.setText(genero);
+					text_anime_n_Ep.setText(nTotEp);
+					text_n_t_temporada.setText(nTotTemp);
+					text_anime_ano_lacamento.setText(ano);
+					text_duracao_anime.setText(duracao);
+					JPanelMessages.sucesso(btnBuscarAnime, "Nome: " + nome + "\nGênero: " + genero + "\nNúmero de episódios: "
+									+ nTotEp + "\nNúmero de temporadas: " + nTotTemp
+									+ "\nDuração: " + duracao + "\nSinopse: " + sinopse
+									+ "\nAno: " + ano);
 				} catch (Exception e) {
 					JPanelMessages.erro(btnBuscarAnime, "Anime com nome '" + text_nome_anime.getText() + "' não existe na base de dados");
 					e.printStackTrace();

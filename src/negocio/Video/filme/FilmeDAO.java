@@ -7,7 +7,7 @@ public class FilmeDAO extends CadastroGenerico<Filme> {
 
 	public FilmeDAO() {
 		RepositorioGenericoTXT<Filme> r = new RepositorioFilmeTXT();
-		r.setNomeArquivo("Filmes.txt");
+		r.setNomeArquivo("./db/Filmes.txt");
 		this.setRepo(r);
 	}
 

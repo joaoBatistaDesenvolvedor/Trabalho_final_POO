@@ -154,8 +154,19 @@ public class TelaFilmes extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					filme = IF.buscarFilme(text_nome_filme.getText());
-					JPanelMessages.sucesso(btn_cadastrar_Filme, "Nome: " + filme.getNome() + "\nDuração: " + filme.getDuracao() + "\nGênero: "
-									+ filme.getGenero() + "\nAno de Lançamento: " + filme.getAno());
+					String
+									nome = filme.getNome(),
+									duracao = String.valueOf(filme.getDuracao()),
+									genero = filme.getGenero(),
+									ano = String.valueOf(filme.getAno()),
+									sinopse = filme.getSinopse();
+					text_nome_filme.setText(nome);
+					text_filme_sinopse.setText(sinopse);
+					text_genero_filme.setText(genero);
+					text_duracao_filme.setText(duracao);
+					text_ano_lancamento_filme.setText(ano);
+					JPanelMessages.sucesso(btn_cadastrar_Filme, "Nome: " + nome + "\nDuração: " + duracao + "\nGênero: "
+									+ genero + "\nAno de Lançamento: " + ano + "\nSinopse: " + sinopse);
 				} catch (Exception e) {
 					JPanelMessages.erro(btnBuscarFilme, "Filme '"+ text_nome_filme.getText()+"' nao existe na base de dados");
 				}
@@ -220,7 +231,7 @@ public class TelaFilmes extends JFrame {
 					IF.excluirFilme(text_nome_filme.getText());
 					JPanelMessages.sucesso(btn_excluir_filme, "Filme '" + text_nome_filme.getText() + "' excluido com sucesso");
 				} catch (Exception e) {
-					JPanelMessages.erro(btn_excluir_filme, "Filme '" + text_nome_filme.getText() + "' não possível excluir");
+					JPanelMessages.erro(btn_excluir_filme, "Filme '" + text_nome_filme.getText() + "' não excluido(não existe)");
 				}
 			}
 		});

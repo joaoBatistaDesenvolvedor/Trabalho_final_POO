@@ -7,7 +7,7 @@ public class SeriesDAO extends CadastroGenerico<Series> {
 
 	public SeriesDAO() {
 		RepositorioGenericoTXT<Series> r = new RepositorioSeriesTXT();
-		r.setNomeArquivo("Series.txt");
+		r.setNomeArquivo("./db/Series.txt");
 		this.setRepo(r);
 	}
 

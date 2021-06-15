@@ -59,10 +59,8 @@ public class TelaFilmes extends JFrame {
 		frame = new JFrame();
 		try {
 			IF = Sistema.getFachada();
-
 		} catch (Exception e) {
 			JPanelMessages.erro(this, e.getMessage());
-
 		}
 		frame.setBounds(100, 100, 640, 452);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -142,7 +140,6 @@ public class TelaFilmes extends JFrame {
 
 				} catch (Exception e) {
 					JPanelMessages.erro(btn_cadastrar_Filme, "Não é possível cadastrar filme");
-					e.printStackTrace();
 				}
 			}
 		});
@@ -217,7 +214,6 @@ public class TelaFilmes extends JFrame {
 					JPanelMessages.sucesso(btnAtualizar_Filme, "Filme '" + filme.getNome() + "' atualizado com sucesso");
 				} catch (Exception e) {
 					JPanelMessages.erro(btnAtualizar_Filme, "Não é possível atualizar o filme");
-					e.printStackTrace();
 				}
 			}
 		});

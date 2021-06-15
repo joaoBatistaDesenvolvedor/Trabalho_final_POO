@@ -161,7 +161,6 @@ public class TelaAnime extends JFrame {
 
 				} catch (Exception e) {
 					JPanelMessages.erro(btnCadastrarAnime, "Erro: " + e.getMessage());
-					e.printStackTrace();
 				}
 			}
 		});
@@ -194,7 +193,6 @@ public class TelaAnime extends JFrame {
 									+ "\nAno: " + ano);
 				} catch (Exception e) {
 					JPanelMessages.erro(btnBuscarAnime, "Anime com nome '" + text_nome_anime.getText() + "' não existe na base de dados");
-					e.printStackTrace();
 				}
 			}
 		});
@@ -253,7 +251,6 @@ public class TelaAnime extends JFrame {
 					JPanelMessages.sucesso(btnAtualizar, "Anime '" + anime.getNome() + "' atualizado com sucesso");
 				} catch (Exception e) {
 					JPanelMessages.erro(btnAtualizar, "Não é possível atualizar o anime");
-					e.printStackTrace();
 				}
 			}
 		});

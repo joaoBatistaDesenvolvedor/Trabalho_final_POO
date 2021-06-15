@@ -65,7 +65,6 @@ abstract public class RepositorioGenericoTXT <T extends Gravavel> {
 			fo.write(g.getRegistro().getBytes());
 		}
 		fo.close();
-		System.out.println("Arquivo gravado com sucesso");
 	}
 
 }

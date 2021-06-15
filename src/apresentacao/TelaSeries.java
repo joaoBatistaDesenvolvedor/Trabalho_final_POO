@@ -163,7 +163,6 @@ public class TelaSeries extends JFrame {
           text_numero_total_temporadas.setText("");
         } catch (Exception e) {
           JPanelMessages.erro(btn_cadastrar_Serie, "Não é possível cadastrar a série");
-          e.printStackTrace();
         }
 
       }
@@ -197,7 +196,6 @@ public class TelaSeries extends JFrame {
                   + "\nAno: " + ano);
         } catch (Exception e) {
           JPanelMessages.erro(btnBuscarSerie, "Série '" + text_nome_serie.getText() + "' não existe na base de dados");
-          e.printStackTrace();
         }
 
       }
@@ -247,7 +245,6 @@ public class TelaSeries extends JFrame {
           JPanelMessages.sucesso(btnatualizarserie, "Série '" + series.getNome() + "' atualizado com sucesso");
         } catch (Exception e) {
           JPanelMessages.erro(btnatualizarserie, "Não é possível atualizar a série");
-          e.printStackTrace();
         }
       }
     });
@@ -271,7 +268,6 @@ public class TelaSeries extends JFrame {
           JPanelMessages.sucesso(btnCancelar, "Série '" + text_nome_serie.getText() + "' excluida com sucesso");
         } catch (Exception e) {
           JPanelMessages.erro(btnExcluir, "Série '" + text_nome_serie.getText() + "' não excluida(não existe)");
-          e.printStackTrace();
         }
       }
     });
